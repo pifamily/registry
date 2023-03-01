@@ -1,0 +1,18 @@
+---
+# defaults file for registry
+manifest_folder: '/home/{{ ansible_user }}/manifests'
+registry_namespace: registry
+
+registry_manifests : [{
+  src: registry_deployment.j2.yaml,
+  dest: registry_deployment.yaml
+},{
+  src: registry_service.j2.yaml,
+  dest: registry_service.yaml
+},{
+  src: registry_ingress.j2.yaml,
+  dest: registry_ingress.yaml
+},{
+  src: registry_pvc.j2.yaml,
+  dest: registry_pvc.yaml
+}]
